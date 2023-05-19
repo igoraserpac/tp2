@@ -52,75 +52,80 @@ void liberar_vetor(Registro *reg){
     free(reg);
 }
 
-void swap(Registro *a, Registro *b){
+void swap(Registro *a, Registro *b, int *desloc){
     Registro t = *a;
     *a = *b;
     *b = t;
+    (*desloc)++;
 }
 
 // Selection Sort
 
-void selectionSort(Registro arr[], int n){
+void selectionSort(Registro arr[], int n, int *comp, int *desloc){
     int i, j, min_idx;
 
     for (i = 0; i < n-1; i++){
         min_idx = i;
-        for (j = i+1; j < n; j++)
-          if (arr[j].chave < arr[min_idx].chave)
-            min_idx = j;
-
-        swap(&arr[min_idx], &arr[i]);
+        for (j = i+1; j < n; j++){
+            (*comp)++;
+            if(arr[j].chave < arr[min_idx].chave){
+                min_idx = j;
+            }
+        }
+        swap(&arr[min_idx], &arr[i], desloc);
     }
 }
 // QuickSort
 
-int partition(Registro *array, int low, int high){
+int partition(Registro *array, int low, int high, int *comp, int *desloc){
 
     Registro pivot = array[high];
     printf("%d\n", pivot.chave);
     int i = (low - 1);
 
-    for (int j = low; j < high; j++) {
-        if (array[j].chave <= pivot.chave) {
+    for(int j = low; j < high; j++){
+        (*comp)++;
+        if(array[j].chave <= pivot.chave) {
             i++;
-            swap(&array[i], &array[j]);
+            swap(&array[i], &array[j], desloc);
         }
     }
 
-    swap(&array[i + 1], &array[high]);
+    swap(&array[i + 1], &array[high], desloc);
     return (i + 1);
 }
 
-void quickSort(Registro *array, int low, int high){
+void quickSort(Registro *array, int low, int high, int *comp, int *desloc){
     if (low < high) {
 
-        int pi = partition(array, low, high);
+        int pi = partition(array, low, high, comp, desloc);
 
-        quickSort(array, low, pi - 1);
+        quickSort(array, low, pi - 1, comp, desloc);
 
-        quickSort(array, pi + 1, high);
+        quickSort(array, pi + 1, high, comp, desloc);
     }
 }
 
 // Insertion Sort 
 
-void insertionSort(Registro arr[], int n){
-    int key, j;
+void insertionSort(Registro arr[], int n, int *comp, int *desloc){
+    Registro key;
+    int j;
     for (int i = 1; i < n; i++) {
-        key = arr[i].chave;
+        key = arr[i];
         j = i - 1;
 
-        while (j >= 0 && arr[j].chave > key) {
+        while (j >= 0 && arr[j].chave > key.chave) {
             arr[j + 1] = arr[j];
             j--;
         }
-        arr[j + 1].chave = key;
+        arr[j + 1] = key;
     }
 }
 
 // shell Sort
 
-void shellSort(Registro arr[], int num){
+void shellSort(Registro arr[], int num, int *comp, int *desloc){
     int i, j, k;
     Registro tmp;
     for (i = num / 2; i > 0; i /= 2) {
@@ -140,7 +145,7 @@ void shellSort(Registro arr[], int num){
 
 // Heap Sort
 
-void heapify(Registro arr[], int n, int i){
+void heapify(Registro arr[], int n, int i, int *comp, int *desloc){
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -152,24 +157,24 @@ void heapify(Registro arr[], int n, int i){
         largest = right;
 
     if (largest != i) {
-        swap(&arr[i], &arr[largest]);
-        heapify(arr, n, largest);
+        swap(&arr[i], &arr[largest], desloc);
+        heapify(arr, n, largest, comp, desloc);
     }
 }
 
-void heapSort(Registro arr[], int n){
+void heapSort(Registro arr[], int n, int *comp, int *desloc){
     for (int i = n / 2 - 1; i >= 0; i--)
-        heapify(arr, n, i);
+        heapify(arr, n, i, comp, desloc);
 
     for (int i = n - 1; i >= 0; i--) {
-        swap(&arr[0], &arr[i]);
-        heapify(arr, i, 0);
+        swap(&arr[0], &arr[i], desloc);
+        heapify(arr, i, 0, comp, desloc);
     }
 }
 
 // Merge Sort
 
-void merge(Registro arr[], int l, int m, int r){
+void merge(Registro arr[], int l, int m, int r, int *comp, int *desloc){
     int i, j, k;
     int n1 = m - l + 1;
     int n2 = r - m;
@@ -210,12 +215,12 @@ void merge(Registro arr[], int l, int m, int r){
     }
 }
 
-void mergeSort(Registro arr[], int l, int r){
+void mergeSort(Registro arr[], int l, int r, int *comp, int *desloc){
     if (l < r) {
         int m = l + (r - l) / 2;
 
-        mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, r);
-        merge(arr, l, m, r);
+        mergeSort(arr, l, m, comp, desloc);
+        mergeSort(arr, m + 1, r, comp, desloc);
+        merge(arr, l, m, r, comp, desloc);
     }
 }
