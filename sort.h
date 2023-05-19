@@ -20,6 +20,6 @@ void selectionSort(Registro *reg, int tam);
 void swap(Registro *a, Registro *b);
 void quickSort(Registro *array, int low, int high);
 void insertionSort(Registro arr[], int n);
-void shellsort(Registro arr[], int num);
+void shellSort(Registro arr[], int num);
 void heapSort(Registro arr[], int n);
 void mergeSort(Registro arr[], int l, int r);

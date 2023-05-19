@@ -124,7 +124,7 @@ void insertionSort(Registro arr[], int n){
 
 // shell Sort
 
-void shellsort(Registro arr[], int num){
+void shellSort(Registro arr[], int num){
     int i, j, k;
     Registro tmp;
     for (i = num / 2; i > 0; i /= 2) {
