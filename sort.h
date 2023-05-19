@@ -9,11 +9,6 @@ typedef struct{
     char campos[50][50];
 }Registro;
 
-void gerar_vetor_reg(Registro *reg, int tam);
-void liberar_vetor(Registro *reg);
-void selectionSort(Registro *reg, int tam);
-void quickSort(Registro *array, int low, int high);
-
 void gerar_vetor_reg_aleatorio(Registro *vetor, int tam);
 void gerar_vetor_reg_crescente(Registro *vetor, int tam);
 void gerar_vetor_reg_decrescente(Registro *vetor, int tam);
