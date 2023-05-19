@@ -1,6 +1,6 @@
 #include "sort.h"
 
-// Funções para gerar e desalocar vetor de Registros grandes (com 50 campos de string, 
+// Função para gerar vetor de Registros grandes (com 50 campos de string, 
 // cada qual com 50 char) alocado dinamicamente com chave aleatória.
 
 void gerar_vetor_reg_aleatorio(Registro *vetor, int tam){
@@ -72,13 +72,13 @@ void selectionSort(Registro *reg, int tam){
 
 // QuickSort
 
-void swap(Registro *a, Registro *b) {
+void swap(Registro *a, Registro *b){
     Registro t = *a;
     *a = *b;
     *b = t;
 }
 
-int partition(Registro *array, int low, int high) {
+int partition(Registro *array, int low, int high){
 
     Registro pivot = array[high];
     printf("%d\n", pivot.chave);
@@ -95,7 +95,7 @@ int partition(Registro *array, int low, int high) {
     return (i + 1);
 }
 
-void quickSort(Registro *array, int low, int high) {
+void quickSort(Registro *array, int low, int high){
     if (low < high) {
 
         int pi = partition(array, low, high);
@@ -124,7 +124,7 @@ void insertionSort(Registro arr[], int n){
 
 // shell Sort
 
-void shellsort(Registro arr[], int num) {
+void shellsort(Registro arr[], int num){
     int i, j, k;
     Registro tmp;
     for (i = num / 2; i > 0; i /= 2) {
@@ -142,7 +142,9 @@ void shellsort(Registro arr[], int num) {
     }
 }
 
-void heapify(Registro arr[], int n, int i) {
+// Heap Sort
+
+void heapify(Registro arr[], int n, int i){
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -159,7 +161,7 @@ void heapify(Registro arr[], int n, int i) {
     }
 }
 
-void heapSort(Registro arr[], int n) {
+void heapSort(Registro arr[], int n){
     for (int i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i);
 
@@ -187,8 +189,8 @@ void merge(Registro arr[], int l, int m, int r){
     j = 0;
     k = l;
 
-    while (i < n1 && j < n2) {
-        if (L[i].chave <= R[j].chave) {
+    while (i < n1 && j < n2){
+        if (L[i].chave <= R[j].chave){
             arr[k] = L[i];
             i++;
         }
@@ -212,8 +214,7 @@ void merge(Registro arr[], int l, int m, int r){
     }
 }
 
-void mergeSort(Registro arr[], int l, int r)
-{
+void mergeSort(Registro arr[], int l, int r){
     if (l < r) {
         int m = l + (r - l) / 2;
 
