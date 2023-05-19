@@ -52,31 +52,27 @@ void liberar_vetor(Registro *reg){
     free(reg);
 }
 
-// Selection Sort
-
-void selectionSort(Registro *reg, int tam){
-    int i, j, min;
-    Registro x;
-    for (i = 0; i < tam; i++) {
-        min = i;
-        for (j = i + 1; j < tam; j++) {
-            if (reg[j].chave < reg[min].chave) {
-                min = j;
-            }
-        }
-        x = reg[min];
-        reg[min] = reg[i];
-        reg[i] = x;
-    }
-}
-
-// QuickSort
-
 void swap(Registro *a, Registro *b){
     Registro t = *a;
     *a = *b;
     *b = t;
 }
+
+// Selection Sort
+
+void selectionSort(Registro arr[], int n){
+    int i, j, min_idx;
+
+    for (i = 0; i < n-1; i++){
+        min_idx = i;
+        for (j = i+1; j < n; j++)
+          if (arr[j].chave < arr[min_idx].chave)
+            min_idx = j;
+
+        swap(&arr[min_idx], &arr[i]);
+    }
+}
+// QuickSort
 
 int partition(Registro *array, int low, int high){
 
