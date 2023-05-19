@@ -108,28 +108,29 @@ void quickSort(Registro *array, int low, int high) {
 
 // Insertion Sort 
 
-void insertionSort(int arr[], int n){
-    int i, key, j;
-    for (i = 1; i < n; i++) {
-        key = arr[i];
+void insertionSort(Registro arr[], int n){
+    int key, j;
+    for (int i = 1; i < n; i++) {
+        key = arr[i].chave;
         j = i - 1;
 
-        while (j >= 0 && arr[j] > key) {
+        while (j >= 0 && arr[j].chave > key) {
             arr[j + 1] = arr[j];
-            j = j - 1;
+            j--;
         }
-        arr[j + 1] = key;
+        arr[j + 1].chave = key;
     }
 }
 
 // shell Sort
 
-void shellsort(int arr[], int num) {
-    int i, j, k, tmp;
-    for (i = num / 2; i > 0; i = i / 2) {
+void shellsort(Registro arr[], int num) {
+    int i, j, k;
+    Registro tmp;
+    for (i = num / 2; i > 0; i /= 2) {
         for (j = i; j < num; j++) {
-            for(k = j - i; k >= 0; k = k - i) {
-                if (arr[k+i] >= arr[k])
+            for(k = j - i; k >= 0; k -= i) {
+                if (arr[k+i].chave >= arr[k].chave)
                     break;
                 else {
                     tmp = arr[k];
@@ -141,15 +142,15 @@ void shellsort(int arr[], int num) {
     }
 }
 
-void heapify(int arr[], int n, int i) {
+void heapify(Registro arr[], int n, int i) {
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
 
-    if (left < n && arr[left] > arr[largest])
+    if (left < n && arr[left].chave > arr[largest].chave)
         largest = left;
 
-    if (right < n && arr[right] > arr[largest])
+    if (right < n && arr[right].chave > arr[largest].chave)
         largest = right;
 
     if (largest != i) {
@@ -158,7 +159,7 @@ void heapify(int arr[], int n, int i) {
     }
 }
 
-void heapSort(int arr[], int n) {
+void heapSort(Registro arr[], int n) {
     for (int i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i);
 
@@ -170,12 +171,12 @@ void heapSort(int arr[], int n) {
 
 // Merge Sort
 
-void merge(int arr[], int l, int m, int r){
+void merge(Registro arr[], int l, int m, int r){
     int i, j, k;
     int n1 = m - l + 1;
     int n2 = r - m;
 
-    int L[n1], R[n2];
+    Registro L[n1], R[n2];
 
     for (i = 0; i < n1; i++)
         L[i] = arr[l + i];
@@ -187,7 +188,7 @@ void merge(int arr[], int l, int m, int r){
     k = l;
 
     while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
+        if (L[i].chave <= R[j].chave) {
             arr[k] = L[i];
             i++;
         }
@@ -211,7 +212,7 @@ void merge(int arr[], int l, int m, int r){
     }
 }
 
-void mergeSort(int arr[], int l, int r)
+void mergeSort(Registro arr[], int l, int r)
 {
     if (l < r) {
         int m = l + (r - l) / 2;

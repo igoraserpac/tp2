@@ -4,8 +4,8 @@
 
 int main(){
     struct timeval start, end;
-    registro *vetor = (registro*)malloc(200000*sizeof(registro));
-    registro novo;
+    Registro *vetor = (Registro*)malloc(200000*sizeof(Registro));
+    Registro novo;
     for(int i=0; i<200000; i++){
         novo.chave = rand();
         vetor[i] = novo;
