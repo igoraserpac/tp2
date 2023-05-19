@@ -52,7 +52,7 @@ void liberar_vetor(Registro *reg){
     free(reg);
 }
 
-void swap(Registro *a, Registro *b, int *desloc){
+void swap(Registro *a, Registro *b, long int *desloc){
     Registro t = *a;
     *a = *b;
     *b = t;
@@ -61,7 +61,7 @@ void swap(Registro *a, Registro *b, int *desloc){
 
 // Selection Sort
 
-void selectionSort(Registro arr[], int n, int *comp, int *desloc){
+void selectionSort(Registro arr[], int n, long int *comp, long int *desloc){
     int i, j, min_idx;
 
     for (i = 0; i < n-1; i++){
@@ -75,9 +75,10 @@ void selectionSort(Registro arr[], int n, int *comp, int *desloc){
         swap(&arr[min_idx], &arr[i], desloc);
     }
 }
+
 // QuickSort
 
-int partition(Registro *array, int low, int high, int *comp, int *desloc){
+int partition(Registro *array, int low, int high, long int *comp, long int *desloc){
 
     Registro pivot = array[high];
     printf("%d\n", pivot.chave);
@@ -95,7 +96,7 @@ int partition(Registro *array, int low, int high, int *comp, int *desloc){
     return (i + 1);
 }
 
-void quickSort(Registro *array, int low, int high, int *comp, int *desloc){
+void quickSort(Registro *array, int low, int high, long int *comp, long int *desloc){
     if (low < high) {
 
         int pi = partition(array, low, high, comp, desloc);
@@ -108,7 +109,7 @@ void quickSort(Registro *array, int low, int high, int *comp, int *desloc){
 
 // Insertion Sort 
 
-void insertionSort(Registro arr[], int n, int *comp, int *desloc){
+void insertionSort(Registro arr[], int n, long int *comp, long int *desloc){
     Registro key;
     int j;
     for (int i = 1; i < n; i++) {
@@ -125,7 +126,7 @@ void insertionSort(Registro arr[], int n, int *comp, int *desloc){
 
 // shell Sort
 
-void shellSort(Registro arr[], int num, int *comp, int *desloc){
+void shellSort(Registro arr[], int num, long int *comp, long int *desloc){
     int i, j, k;
     Registro tmp;
     for (i = num / 2; i > 0; i /= 2) {
@@ -145,7 +146,7 @@ void shellSort(Registro arr[], int num, int *comp, int *desloc){
 
 // Heap Sort
 
-void heapify(Registro arr[], int n, int i, int *comp, int *desloc){
+void heapify(Registro arr[], int n, int i, long int *comp, long int *desloc){
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -162,7 +163,7 @@ void heapify(Registro arr[], int n, int i, int *comp, int *desloc){
     }
 }
 
-void heapSort(Registro arr[], int n, int *comp, int *desloc){
+void heapSort(Registro arr[], int n, long int *comp, long int *desloc){
     for (int i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i, comp, desloc);
 
@@ -174,7 +175,7 @@ void heapSort(Registro arr[], int n, int *comp, int *desloc){
 
 // Merge Sort
 
-void merge(Registro arr[], int l, int m, int r, int *comp, int *desloc){
+void merge(Registro arr[], int l, int m, int r, long int *comp, long int *desloc){
     int i, j, k;
     int n1 = m - l + 1;
     int n2 = r - m;
@@ -215,7 +216,7 @@ void merge(Registro arr[], int l, int m, int r, int *comp, int *desloc){
     }
 }
 
-void mergeSort(Registro arr[], int l, int r, int *comp, int *desloc){
+void mergeSort(Registro arr[], int l, int r, long int *comp, long int *desloc){
     if (l < r) {
         int m = l + (r - l) / 2;
 
