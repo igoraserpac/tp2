@@ -81,7 +81,7 @@ void selectionSort(Registro arr[], int n, long int *comp, long int *desloc){
 int partition(Registro *array, int low, int high, long int *comp, long int *desloc){
 
     Registro pivot = array[high];
-    printf("%d\n", pivot.chave);
+    // printf("%d\n", pivot.chave);
     int i = (low - 1);
 
     for(int j = low; j < high; j++){
@@ -117,9 +117,12 @@ void insertionSort(Registro arr[], int n, long int *comp, long int *desloc){
         j = i - 1;
 
         while (j >= 0 && arr[j].chave > key.chave) {
+            (*desloc)++;
+            (*comp)++;
             arr[j + 1] = arr[j];
             j--;
         }
+        (*desloc)++;
         arr[j + 1] = key;
     }
 }
@@ -132,12 +135,14 @@ void shellSort(Registro arr[], int num, long int *comp, long int *desloc){
     for (i = num / 2; i > 0; i /= 2) {
         for (j = i; j < num; j++) {
             for(k = j - i; k >= 0; k -= i) {
+                (*comp)++;
                 if (arr[k+i].chave >= arr[k].chave)
                     break;
                 else {
-                    tmp = arr[k];
-                    arr[k] = arr[k+i];
-                    arr[k+i] = tmp;
+                    swap(&arr[k], &arr[k+i], desloc);
+                    // tmp = arr[k];
+                    // arr[k] = arr[k+i];
+                    // arr[k+i] = tmp;
                 }
             }
         }
@@ -150,13 +155,13 @@ void heapify(Registro arr[], int n, int i, long int *comp, long int *desloc){
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
-
+    (*comp)++;
     if (left < n && arr[left].chave > arr[largest].chave)
         largest = left;
-
+    (*comp)++;
     if (right < n && arr[right].chave > arr[largest].chave)
         largest = right;
-
+    (*comp)++;
     if (largest != i) {
         swap(&arr[i], &arr[largest], desloc);
         heapify(arr, n, largest, comp, desloc);
@@ -192,6 +197,8 @@ void merge(Registro arr[], int l, int m, int r, long int *comp, long int *desloc
     k = l;
 
     while (i < n1 && j < n2){
+        (*comp)++;
+        (*desloc)++;
         if (L[i].chave <= R[j].chave){
             arr[k] = L[i];
             i++;
@@ -204,12 +211,14 @@ void merge(Registro arr[], int l, int m, int r, long int *comp, long int *desloc
     }
 
     while (i < n1) {
+        (*desloc)++;
         arr[k] = L[i];
         i++;
         k++;
     }
 
     while (j < n2) {
+        (*desloc)++;
         arr[k] = R[j];
         j++;
         k++;
