@@ -7,7 +7,6 @@ int main(){
     long int comp = 0, desloc = 0;
     struct rusage start, end;
     Registro *vetor;
-    // Registro *vetor = (Registro*)malloc(tam*sizeof(Registro));
     Registro novo;
 
     for(int t=0; t<5; t++){
