@@ -56,7 +56,7 @@ void swap(Registro *a, Registro *b, long int *desloc){
     Registro t = *a;
     *a = *b;
     *b = t;
-    (*desloc)++;
+    (*desloc) += 3;
 }
 
 // Selection Sort
@@ -130,16 +130,18 @@ void insertionSort(Registro arr[], int n, long int *comp, long int *desloc){
 // shell Sort
 
 void shellSort(Registro arr[], int num, long int *comp, long int *desloc){
-    int i, j, k;
+    int h = 1, i, j;
     Registro tmp;
-    for (i = num / 2; i > 0; i /= 2) {
-        for (j = i; j < num; j++) {
-            for(k = j - i; k >= 0; k -= i) {
+    do h = h * 3 + 1; while (h < num);
+    h /= 3;
+    for (; h > 0; h /= 3) {
+        for (i = h; i < num; i++) {
+            for(j = i - h; j >= 0; j -= h) {
                 (*comp)++;
-                if (arr[k+i].chave >= arr[k].chave)
+                if (arr[j+h].chave >= arr[j].chave)
                     break;
                 else {
-                    swap(&arr[k], &arr[k+i], desloc);
+                    swap(&arr[j], &arr[j+h], desloc);
                     // tmp = arr[k];
                     // arr[k] = arr[k+i];
                     // arr[k+i] = tmp;
@@ -185,7 +187,8 @@ void merge(Registro arr[], int l, int m, int r, long int *comp, long int *desloc
     int n1 = m - l + 1;
     int n2 = r - m;
 
-    Registro L[n1], R[n2];
+    Registro *L = (Registro*)malloc(n1*sizeof(Registro));
+    Registro *R = (Registro*)malloc(n2*sizeof(Registro));
 
     for (i = 0; i < n1; i++)
         L[i] = arr[l + i];
@@ -223,6 +226,8 @@ void merge(Registro arr[], int l, int m, int r, long int *comp, long int *desloc
         j++;
         k++;
     }
+    free(L);
+    free(R);
 }
 
 void mergeSort(Registro arr[], int l, int r, long int *comp, long int *desloc){
