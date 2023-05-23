@@ -12,6 +12,7 @@ int main(){
     for(int t=0; t<5; t++){
         vetor = (Registro*)malloc(tam[t]*sizeof(Registro));
         printf("\n\n*********************** %ld elementos **************************\n\n", tam[t]);
+        
         // ---------------------------------------------------------------------------------------------
         //                                       Quick Sort
         // ---------------------------------------------------------------------------------------------
@@ -47,9 +48,6 @@ int main(){
         printf("Tempo decorrido = %Lf\n", endTime - startTime);
         printf("Comparações = %ld\n", comp);
         printf("Deslocamentos = %ld\n\n", desloc);
-
-        
-
 
         // ---------------------------------------------------------------------------------------------
         //                                       Heap Sort
