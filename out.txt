@@ -2,39 +2,79 @@
 
 *********************** 20 elementos **************************
 
+
+ -Aleatórios: 
 =============== Quick Sort ===============
 
-Tempo decorrido = 0.000023
+Tempo decorrido = 0.000000
 Comparações = 64
 Deslocamentos = 138
 
 =============== Shell Sort ===============
 
-Tempo decorrido = 0.000015
+Tempo decorrido = 0.000000
 Comparações = 77
 Deslocamentos = 120
 
 =============== Heap Sort ===============
 
-Tempo decorrido = 0.000024
+Tempo decorrido = 0.000000
 Comparações = 243
 Deslocamentos = 213
 
 =============== Merge Sort ===============
 
-Tempo decorrido = 0.000816
+Tempo decorrido = 0.000000
 Comparações = 63
 Deslocamentos = 88
 
 =============== Insertion Sort ===============
 
-Tempo decorrido = 0.000017
-Comparações = 76
+Tempo decorrido = 0.000000
+Comparações = 19
 Deslocamentos = 95
 
 =============== Selection Sort ===============
 
-Tempo decorrido = 0.000012
+Tempo decorrido = 0.000000
+Comparações = 190
+Deslocamentos = 57
+
+
+Crescentes:
+=============== Quick Sort ===============
+
+Tempo decorrido = 0.000000
+Comparações = 380
+Deslocamentos = 684
+
+=============== Shell Sort ===============
+
+Tempo decorrido = 0.000000
+Comparações = 42
+Deslocamentos = 0
+
+=============== Heap Sort ===============
+
+Tempo decorrido = 0.000000
+Comparações = 273
+Deslocamentos = 243
+
+=============== Merge Sort ===============
+
+Tempo decorrido = 0.000000
+Comparações = 48
+Deslocamentos = 88
+
+=============== Insertion Sort ===============
+
+Tempo decorrido = 0.000000
+Comparações = 19
+Deslocamentos = 19
+
+=============== Selection Sort ===============
+
+Tempo decorrido = 0.000000
 Comparações = 190
 Deslocamentos = 57
 
@@ -42,39 +82,79 @@ Deslocamentos = 57
 
 *********************** 500 elementos **************************
 
+
+ -Aleatórios: 
 =============== Quick Sort ===============
 
-Tempo decorrido = 0.000384
+Tempo decorrido = 0.000000
 Comparações = 4409
 Deslocamentos = 6966
 
 =============== Shell Sort ===============
 
-Tempo decorrido = 0.000539
+Tempo decorrido = 0.001806
 Comparações = 5838
 Deslocamentos = 10785
 
 =============== Heap Sort ===============
 
-Tempo decorrido = 0.000533
+Tempo decorrido = 0.001443
 Comparações = 12942
 Deslocamentos = 12192
 
 =============== Merge Sort ===============
 
-Tempo decorrido = 0.000000
+Tempo decorrido = 0.000368
 Comparações = 3875
 Deslocamentos = 4488
 
 =============== Insertion Sort ===============
 
-Tempo decorrido = 0.004131
-Comparações = 61634
+Tempo decorrido = 0.006611
+Comparações = 499
 Deslocamentos = 62133
 
 =============== Selection Sort ===============
 
-Tempo decorrido = 0.000411
+Tempo decorrido = 0.000654
+Comparações = 124750
+Deslocamentos = 1497
+
+
+Crescentes:
+=============== Quick Sort ===============
+
+Tempo decorrido = 0.018969
+Comparações = 249500
+Deslocamentos = 377244
+
+=============== Shell Sort ===============
+
+Tempo decorrido = 0.000023
+Comparações = 2457
+Deslocamentos = 0
+
+=============== Heap Sort ===============
+
+Tempo decorrido = 0.000738
+Comparações = 13815
+Deslocamentos = 13065
+
+=============== Merge Sort ===============
+
+Tempo decorrido = 0.000000
+Comparações = 2272
+Deslocamentos = 4488
+
+=============== Insertion Sort ===============
+
+Tempo decorrido = 0.000000
+Comparações = 499
+Deslocamentos = 499
+
+=============== Selection Sort ===============
+
+Tempo decorrido = 0.000000
 Comparações = 124750
 Deslocamentos = 1497
 
@@ -82,39 +162,79 @@ Deslocamentos = 1497
 
 *********************** 5000 elementos **************************
 
+
+ -Aleatórios: 
 =============== Quick Sort ===============
 
-Tempo decorrido = 0.008666
+Tempo decorrido = 0.011205
 Comparações = 194530
 Deslocamentos = 117447
 
 =============== Shell Sort ===============
 
-Tempo decorrido = 0.015838
+Tempo decorrido = 0.018866
 Comparações = 100706
 Deslocamentos = 203310
 
 =============== Heap Sort ===============
 
-Tempo decorrido = 0.011771
+Tempo decorrido = 0.017447
 Comparações = 178827
 Deslocamentos = 171327
 
 =============== Merge Sort ===============
 
-Tempo decorrido = 0.039754
+Tempo decorrido = 0.023524
 Comparações = 55257
 Deslocamentos = 61808
 
 =============== Insertion Sort ===============
 
-Tempo decorrido = 0.966455
-Comparações = 6335766
+Tempo decorrido = 1.031645
+Comparações = 4999
 Deslocamentos = 6340765
 
 =============== Selection Sort ===============
 
-Tempo decorrido = 0.059262
+Tempo decorrido = 0.038725
+Comparações = 12497500
+Deslocamentos = 14997
+
+
+Crescentes:
+=============== Quick Sort ===============
+
+Tempo decorrido = 2.489993
+Comparações = 24995000
+Deslocamentos = 37522494
+
+=============== Shell Sort ===============
+
+Tempo decorrido = 0.000179
+Comparações = 35084
+Deslocamentos = 0
+
+=============== Heap Sort ===============
+
+Tempo decorrido = 0.009544
+Comparações = 190299
+Deslocamentos = 182799
+
+=============== Merge Sort ===============
+
+Tempo decorrido = 0.017536
+Comparações = 32004
+Deslocamentos = 61808
+
+=============== Insertion Sort ===============
+
+Tempo decorrido = 0.000000
+Comparações = 4999
+Deslocamentos = 4999
+
+=============== Selection Sort ===============
+
+Tempo decorrido = 0.035387
 Comparações = 12497500
 Deslocamentos = 14997
 
@@ -122,39 +242,79 @@ Deslocamentos = 14997
 
 *********************** 10000 elementos **************************
 
+
+ -Aleatórios: 
 =============== Quick Sort ===============
 
-Tempo decorrido = 0.016767
+Tempo decorrido = 0.020825
 Comparações = 12644283
 Deslocamentos = 244599
 
 =============== Shell Sort ===============
 
-Tempo decorrido = 0.038442
+Tempo decorrido = 0.040822
 Comparações = 232405
 Deslocamentos = 484323
 
 =============== Heap Sort ===============
 
-Tempo decorrido = 0.028533
+Tempo decorrido = 0.026568
 Comparações = 388113
 Deslocamentos = 373113
 
 =============== Merge Sort ===============
 
-Tempo decorrido = 0.075966
+Tempo decorrido = 0.036865
 Comparações = 120468
 Deslocamentos = 133616
 
 =============== Insertion Sort ===============
 
-Tempo decorrido = 4.688736
-Comparações = 25113400
+Tempo decorrido = 4.920984
+Comparações = 9999
 Deslocamentos = 25123399
 
 =============== Selection Sort ===============
 
-Tempo decorrido = 0.262711
+Tempo decorrido = 0.163295
+Comparações = 49995000
+Deslocamentos = 29997
+
+
+Crescentes:
+=============== Quick Sort ===============
+
+Tempo decorrido = 10.700053
+Comparações = 99990000
+Deslocamentos = 150044994
+
+=============== Shell Sort ===============
+
+Tempo decorrido = 0.000488
+Comparações = 75243
+Deslocamentos = 0
+
+=============== Heap Sort ===============
+
+Tempo decorrido = 0.021080
+Comparações = 410871
+Deslocamentos = 395871
+
+=============== Merge Sort ===============
+
+Tempo decorrido = 0.032069
+Comparações = 69008
+Deslocamentos = 133616
+
+=============== Insertion Sort ===============
+
+Tempo decorrido = 0.002017
+Comparações = 9999
+Deslocamentos = 9999
+
+=============== Selection Sort ===============
+
+Tempo decorrido = 0.165967
 Comparações = 49995000
 Deslocamentos = 29997
 
@@ -162,39 +322,79 @@ Deslocamentos = 29997
 
 *********************** 20000 elementos **************************
 
+
+ -Aleatórios: 
 =============== Quick Sort ===============
 
-Tempo decorrido = 0.043907
+Tempo decorrido = 0.044930
 Comparações = 50334967
 Deslocamentos = 583188
 
 =============== Shell Sort ===============
 
-Tempo decorrido = 0.088293
+Tempo decorrido = 0.087147
 Comparações = 539570
 Deslocamentos = 1151523
 
 =============== Heap Sort ===============
 
-Tempo decorrido = 0.063837
+Tempo decorrido = 0.062481
 Comparações = 835173
 Deslocamentos = 805173
 
 =============== Merge Sort ===============
 
-Tempo decorrido = 0.133219
+Tempo decorrido = 0.078316
 Comparações = 260805
 Deslocamentos = 287232
 
 =============== Insertion Sort ===============
 
-Tempo decorrido = 21.217601
-Comparações = 99677662
+Tempo decorrido = 21.503128
+Comparações = 19999
 Deslocamentos = 99697661
 
 =============== Selection Sort ===============
 
-Tempo decorrido = 1.111954
+Tempo decorrido = 0.692944
+Comparações = 199990000
+Deslocamentos = 59997
+
+
+Crescentes:
+=============== Quick Sort ===============
+
+Tempo decorrido = 44.477388
+Comparações = 399980000
+Deslocamentos = 600089994
+
+=============== Shell Sort ===============
+
+Tempo decorrido = 0.001212
+Comparações = 165243
+Deslocamentos = 0
+
+=============== Heap Sort ===============
+
+Tempo decorrido = 0.045499
+Comparações = 878637
+Deslocamentos = 848637
+
+=============== Merge Sort ===============
+
+Tempo decorrido = 0.074403
+Comparações = 148016
+Deslocamentos = 287232
+
+=============== Insertion Sort ===============
+
+Tempo decorrido = 0.004187
+Comparações = 19999
+Deslocamentos = 19999
+
+=============== Selection Sort ===============
+
+Tempo decorrido = 0.683258
 Comparações = 199990000
 Deslocamentos = 59997
 

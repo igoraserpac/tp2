@@ -3,54 +3,54 @@
 // Função para gerar vetor de Registros grandes (com 50 campos de string, 
 // cada qual com 50 char) alocado dinamicamente com chave aleatória.
 
-void gerar_vetor_reg_aleatorio(Registro *vetor, int tam){
-    vetor = (Registro*)malloc(tam*sizeof(Registro));
-    Registro novo;
-    for(int i=0; i<tam; i++){
-        novo.chave = rand();
-        vetor[i] = novo;
-    }
-}
+// void gerar_vetor_reg_aleatorio(Registro *vetor, int tam){
+//     vetor = (Registro*)malloc(tam*sizeof(Registro));
+//     Registro novo;
+//     for(int i=0; i<tam; i++){
+//         novo.chave = rand();
+//         vetor[i] = novo;
+//     }
+// }
 
-void gerar_vetor_reg_crescente(Registro *vetor, int tam){
-    vetor = (Registro*)malloc(tam*sizeof(Registro));
-    Registro novo;
-    for(int i=0; i<tam; i++){
-        novo.chave = i;
-        vetor[i] = novo;
-    }
-}
+// void gerar_vetor_reg_crescente(Registro *vetor, int tam){
+//     vetor = (Registro*)malloc(tam*sizeof(Registro));
+//     Registro novo;
+//     for(int i=0; i<tam; i++){
+//         novo.chave = i;
+//         vetor[i] = novo;
+//     }
+// }
 
-void gerar_vetor_reg_decrescente(Registro *vetor, int tam){
-    vetor = (Registro*)malloc(tam*sizeof(Registro));
-    Registro novo;
-    for(int i=tam-1; i>=0; i--){
-        novo.chave = i;
-        vetor[i] = novo;
-    }
-}
+// void gerar_vetor_reg_decrescente(Registro *vetor, int tam){
+//     vetor = (Registro*)malloc(tam*sizeof(Registro));
+//     Registro novo;
+//     for(int i=tam-1; i>=0; i--){
+//         novo.chave = i;
+//         vetor[i] = novo;
+//     }
+// }
 
-void gerar_vetor_inteiros_rand(int *vetor, int tam){
-    for(int i=0; i<tam; i++){
-        vetor[i] = rand();
-    }
-}
+// void gerar_vetor_inteiros_aleatorio(int *vetor, int tam){
+//     for(int i=0; i<tam; i++){
+//         vetor[i] = rand();
+//     }
+// }
 
-void gerar_vetor_inteiros_crescente(int *vetor, int tam){
-    for(int i=0; i<tam; i++){
-        vetor[i] = i;
-    }
-}
+// void gerar_vetor_inteiros_crescente(int *vetor, int tam){
+//     for(int i=0; i<tam; i++){
+//         vetor[i] = i;
+//     }
+// }
 
-void gerar_vetor_inteiros_decrescente(int *vetor, int tam){
-    for(int i=tam-1; i>=0; i--){
-        vetor[i] = i;
-    }
-}
+// void gerar_vetor_inteiros_decrescente(int *vetor, int tam){
+//     for(int i=tam-1; i>=0; i--){
+//         vetor[i] = i;
+//     }
+// }
 
-void liberar_vetor(Registro *reg){
-    free(reg);
-}
+// void liberar_vetor(Registro *reg){
+//     free(reg);
+// }
 
 void swap(Registro *a, Registro *b, long int *desloc){
     Registro t = *a;
@@ -115,10 +115,9 @@ void insertionSort(Registro arr[], int n, long int *comp, long int *desloc){
     for (int i = 1; i < n; i++) {
         key = arr[i];
         j = i - 1;
-
+        (*comp)++;
         while (j >= 0 && arr[j].chave > key.chave) {
             (*desloc)++;
-            (*comp)++;
             arr[j + 1] = arr[j];
             j--;
         }
