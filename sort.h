@@ -7,18 +7,23 @@
 typedef struct{
     int chave;
     char campos[50][50];
-}Registro;
+}Registro_g;
 
-// void gerar_vetor_reg_aleatorio(Registro *vetor, int tam);
-// void gerar_vetor_reg_crescente(Registro *vetor, int tam);
-// void gerar_vetor_reg_decrescente(Registro *vetor, int tam);
-// void gerar_vetor_inteiros_aleatorio(int *vetor, int tam);
-// void gerar_vetor_inteiros_crescente(int *vetor, int tam);
-// void gerar_vetor_inteiros_decrescente(int *vetor, int tam);
-// void liberar_vetor(Registro *reg);
-void selectionSort(Registro *reg, int tam, long int *comp, long int *desloc);
-void quickSort(Registro *array, int low, int high, long int *comp, long int *desloc);
-void insertionSort(Registro arr[], int n, long int *comp, long int *desloc);
-void shellSort(Registro arr[], int num, long int *comp, long int *desloc);
-void heapSort(Registro arr[], int n, long int *comp, long int *desloc);
-void mergeSort(Registro arr[], int l, int r, long int *comp, long int *desloc);
+
+typedef struct{
+    int chave;
+}Registro_p;
+
+void selectionSort_g(Registro_g arr[], int n, long int *comp, long int *desloc);
+void quickSort_g(Registro_g *array, int low, int high, long int *comp, long int *desloc);
+void insertionSort_g(Registro_g arr[], int n, long int *comp, long int *desloc);
+void shellSort_g(Registro_g arr[], int num, long int *comp, long int *desloc);
+void heapSort_g(Registro_g arr[], int n, long int *comp, long int *desloc);
+void mergeSort_g(Registro_g arr[], int l, int r, long int *comp, long int *desloc);
+
+void selectionSort_p(Registro_p arr[], int n, long int *comp, long int *desloc);
+void quickSort_p(Registro_p *array, int low, int high, long int *comp, long int *desloc);
+void insertionSort_p(Registro_p arr[], int n, long int *comp, long int *desloc);
+void shellSort_p(Registro_p arr[], int num, long int *comp, long int *desloc);
+void heapSort_p(Registro_p arr[], int n, long int *comp, long int *desloc);
+void mergeSort_p(Registro_p arr[], int l, int r, long int *comp, long int *desloc);
