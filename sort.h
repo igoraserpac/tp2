@@ -14,16 +14,16 @@ typedef struct{
     int chave;
 }Registro_p;
 
-void selectionSort_g(Registro_g arr[], int n, long int *comp, long int *desloc);
-void quickSort_g(Registro_g *array, int low, int high, long int *comp, long int *desloc);
-void insertionSort_g(Registro_g arr[], int n, long int *comp, long int *desloc);
-void shellSort_g(Registro_g arr[], int num, long int *comp, long int *desloc);
-void heapSort_g(Registro_g arr[], int n, long int *comp, long int *desloc);
-void mergeSort_g(Registro_g arr[], int l, int r, long int *comp, long int *desloc);
+void selectionSort_g(Registro_g arr[], int n, long unsigned int *comp, long unsigned int *desloc);
+void quickSort_g(Registro_g arr[], long int n, long unsigned int *comp, long unsigned int *desloc);
+void insertionSort_g(Registro_g arr[], int n, long unsigned int *comp, long unsigned int *desloc);
+void shellSort_g(Registro_g arr[], int num, long unsigned int *comp, long unsigned int *desloc);
+void heapSort_g(Registro_g arr[], int n, long unsigned int *comp, long unsigned int *desloc);
+void mergeSort_g(Registro_g arr[], int l, int r, long unsigned int *comp, long unsigned int *desloc);
 
-void selectionSort_p(Registro_p arr[], int n, long int *comp, long int *desloc);
-void quickSort_p(Registro_p *array, int low, int high, long int *comp, long int *desloc);
-void insertionSort_p(Registro_p arr[], int n, long int *comp, long int *desloc);
-void shellSort_p(Registro_p arr[], int num, long int *comp, long int *desloc);
-void heapSort_p(Registro_p arr[], int n, long int *comp, long int *desloc);
-void mergeSort_p(Registro_p arr[], int l, int r, long int *comp, long int *desloc);
+void selectionSort_p(Registro_p arr[], int n, long unsigned int *comp, long unsigned int *desloc);
+void quickSort_p(Registro_p arr[], long int n, long unsigned int *comp, long unsigned int *desloc);
+void insertionSort_p(Registro_p arr[], int n, long unsigned int *comp, long unsigned int *desloc);
+void shellSort_p(Registro_p arr[], int num, long unsigned int *comp, long unsigned int *desloc);
+void heapSort_p(Registro_p arr[], int n, long unsigned int *comp, long unsigned int *desloc);
+void mergeSort_p(Registro_p arr[], int l, int r, long unsigned int *comp, long unsigned int *desloc);
