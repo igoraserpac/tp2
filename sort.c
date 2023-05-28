@@ -23,6 +23,7 @@ void selectionSort_p(Registro_p arr[], int n, long unsigned int *comp, long unsi
     for (i = 0; i < n-1; i++){
         min_idx = i;
         for (j = i+1; j < n; j++){
+            // printf("ordenando: %d %d\n", arr[j].chave, arr[min_idx].chave);
             (*comp)++;
             if(arr[j].chave < arr[min_idx].chave){
                 min_idx = j;
@@ -230,6 +231,7 @@ void selectionSort_g(Registro_g arr[], int n, long unsigned int *comp, long unsi
     for (i = 0; i < n-1; i++){
         min_idx = i;
         for (j = i+1; j < n; j++){
+            // printf("ordenando: %d %d\n", arr[j].chave, arr[min_idx].chave);
             (*comp)++;
             if(arr[j].chave < arr[min_idx].chave){
                 min_idx = j;
