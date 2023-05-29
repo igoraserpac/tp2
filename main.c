@@ -1,7 +1,7 @@
 #include "sort.h"
 
 int main(){
-    FILE *arquivo = fopen("log.txt", "w");
+    FILE *arquivo = fopen("novo.txt", "w");
     long int tam_v[] = {20, 500, 5000, 10000, 100000};
     long unsigned int comp = 0, desloc = 0;
     struct rusage start, end;
@@ -10,7 +10,7 @@ int main(){
     Registro_g *vetor_g = (Registro_g*)malloc(100000*sizeof(Registro_g));
     Registro_g novo_g;
     long double startTime, endTime, media_t;
-    int media_c, media_d;
+    int media_c, media_d, k;
     for(int tam_reg=0; tam_reg<2; tam_reg++){
         if(tam_reg == 0)fprintf(arquivo, "Registro pequeno:\n");
         else fprintf(arquivo, "Registro grande:\n");
@@ -20,13 +20,13 @@ int main(){
             else if(organizacao == 2) fprintf(arquivo, "\tDecrescente:\n");
             for(int algoritmo=0; algoritmo<6; algoritmo++){
 
-                // if(algoritmo == 0) fprintf(arquivo, "\t\tSelection Sort:\n");
-                // else if(algoritmo == 1) fprintf(arquivo, "\t\tInsertion Sort:\n");
-                if(algoritmo == 0) fprintf(arquivo, "\t\tQuick Sort:\n");
-                else if(algoritmo == 1) fprintf(arquivo, "\t\tShell Sort:\n");
-                else if(algoritmo == 2) fprintf(arquivo, "\t\tHeap Sort:\n");
-                else if(algoritmo == 3) fprintf(arquivo, "\t\tMerge Sort:\n");
-                for(int tam_vetor=0; tam_vetor<4; tam_vetor++){
+                if(algoritmo == 0) fprintf(arquivo, "\t\tSelection Sort:\n");
+                else if(algoritmo == 1) fprintf(arquivo, "\t\tInsertion Sort:\n");
+                else if(algoritmo == 2) fprintf(arquivo, "\t\tQuick Sort:\n");
+                else if(algoritmo == 3) fprintf(arquivo, "\t\tShell Sort:\n");
+                else if(algoritmo == 4) fprintf(arquivo, "\t\tHeap Sort:\n");
+                else if(algoritmo == 5) fprintf(arquivo, "\t\tMerge Sort:\n");
+                for(int tam_vetor=0; tam_vetor<5; tam_vetor++){
                     fprintf(arquivo, "\t\t\t%ld itens:", tam_v[tam_vetor]);
                     media_t = 0;
                     media_c = 0;
@@ -46,19 +46,19 @@ int main(){
                                     vetor_p[j] = novo_p;
                                 }
                             }else if(organizacao == 2){
-                                int k = 0;
+                                k = 0;
                                 for(int j=tam_v[tam_vetor]; j>0; j--){
-                                    novo_g.chave = j;
-                                    vetor_g[k] = novo_g;
+                                    novo_p.chave = j;
+                                    vetor_p[k] = novo_p;
                                     k++;
                                 }
                             }
                             getrusage(RUSAGE_SELF, &start);
-                            // if(algoritmo == 0){
-                            //     selectionSort_p(vetor_p, tam_v[tam_vetor], &comp, &desloc);
-                            // }else if(algoritmo == 1){
-                            //     insertionSort_p(vetor_p, tam_v[tam_vetor], &comp, &desloc);
                             if(algoritmo == 0){
+                                selectionSort_p(vetor_p, tam_v[tam_vetor], &comp, &desloc);
+                            }else if(algoritmo == 1){
+                                insertionSort_p(vetor_p, tam_v[tam_vetor], &comp, &desloc);
+                            }else if(algoritmo == 0){
                                 quickSort_p(vetor_p, tam_v[tam_vetor], &comp, &desloc);
                             }else if(algoritmo == 1){
                                 shellSort_p(vetor_p, tam_v[tam_vetor], &comp, &desloc);
@@ -80,7 +80,7 @@ int main(){
                                     vetor_g[j] = novo_g;
                                 }
                             }else if(organizacao == 2){
-                                int k = 0;
+                                k = 0;
                                 for(int j=tam_v[tam_vetor]; j>0; j--){
                                     novo_g.chave = j;
                                     vetor_g[k] = novo_g;
@@ -88,11 +88,11 @@ int main(){
                                 }
                             }
                             getrusage(RUSAGE_SELF, &start);
-                            // if(algoritmo == 0){
-                            //     selectionSort_g(vetor_g, tam_v[tam_vetor], &comp, &desloc);
-                            // }else if(algoritmo == 1){
-                            //     insertionSort_g(vetor_g, tam_v[tam_vetor], &comp, &desloc);
                             if(algoritmo == 0){
+                                selectionSort_g(vetor_g, tam_v[tam_vetor], &comp, &desloc);
+                            }else if(algoritmo == 1){
+                                insertionSort_g(vetor_g, tam_v[tam_vetor], &comp, &desloc);
+                            }else if(algoritmo == 0){
                                 quickSort_g(vetor_g, tam_v[tam_vetor], &comp, &desloc);
                             }else if(algoritmo == 1){
                                 shellSort_g(vetor_g, tam_v[tam_vetor], &comp, &desloc);
