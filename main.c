@@ -1,7 +1,7 @@
 #include "sort.h"
 
 int main(){
-    FILE *arquivo = fopen("novo.txt", "w");
+    FILE *arquivo = fopen("resultados.txt", "w");
     long int tam_v[] = {20, 500, 5000, 10000, 100000};
     long unsigned int comp = 0, desloc = 0;
     struct rusage start, end;
